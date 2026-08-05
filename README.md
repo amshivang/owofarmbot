@@ -69,3 +69,13 @@ This executable was built using several powerful open-source libraries:
 
 ## Disclaimer
 > **Warning:** Self-botting is strictly against Discord's Terms of Service. Use this application at your own risk. The developers are not responsible for any account bans or data loss.
+
+---
+<div align="center">
+  <a href="https://buymeacoffee.com/amshivang">
+    <img src="https://raw.githubusercontent.com/amshivang/amshivang/main/qr-code.png" alt="Buy Me A Coffee" width="200">
+  </a>
+  <br>
+  <strong><a href="https://buymeacoffee.com/amshivang">Support my work on Buy Me A Coffee! ☕</a></strong>
+</div>
+
