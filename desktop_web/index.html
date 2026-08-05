@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OwO FarmBot — Editorial Automation Console</title>
+    <link rel="stylesheet" href="style.css">
+        <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+<body>
+    <div class="jp-matrix"></div>
+    <script src="matrix.js"></script>
+    <main class="page l-page">
+        <!-- Top bar -->
+        <header class="topbar">
+            <div class="brand">
+                OWO FARM BOT
+            </div>
+            
+            <div class="system-status">
+                <a href="/dashboard" class="btn btn--small btn--primary" id="landing-login-btn">
+                    DASHBOARD
+                    <svg class="btn__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-left: 2px; width: 10px; height: 10px;">
+                        <path d="M5 12h14" />
+                        <path d="m13 5 7 7-7 7" />
+                    </svg>
+                </a>
+            </div>
+        </header>
+
+        <hr class="l-rule" />
+
+        <!-- Hero Section -->
+        <section class="hero-section l-stack" style="gap: var(--space-xl); padding: var(--space-3xl) 0 0; margin-bottom: var(--space-xl);">
+            <div class="eyebrow"><span class="dot"></span> OWO AUTOFARM DESKTOP APP</div>
+            <h1 class="t-display-xl" style="max-width: 100%; text-transform: uppercase; font-size: clamp(36px, 5vw, 64px); line-height: 1.1; font-weight: 700; letter-spacing: var(--track-display);">A highly optimized, elegant desktop automation console for OwO.</h1>
+            <p class="t-body" style="font-size: 20px; max-width: 680px; line-height: 1.5; color: var(--color-graphite);">
+                OwO FarmBot runs seamlessly on your desktop. Manage your farm cycles, play minigames automatically, and track logs in real-time with an elegant UI.
+            </p>
+            <div style="margin-top: var(--space-sm);">
+                <a href="/dashboard" class="btn btn--primary cta-btn" style="font-size: 14px; padding: 16px 28px;">
+                    START FARMING
+                    <svg class="btn__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-left: 6px; width: 16px; height: 16px; stroke-width: 2;">
+                        <path d="M5 12h14" />
+                        <path d="m13 5 7 7-7 7" />
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- Features Grid -->
+        <section class="section" style="padding: var(--space-2xl) 0;">
+            <div class="section__head">
+                <span class="eyebrow">FEATURES</span>
+                <span class="t-mono">PRECISE AUTOMATION</span>
+            </div>
+            <div class="l-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--gutter); display: grid; width: 100%;">
+                <!-- Feature 1 -->
+                <div class="card card--paper" style="gap: var(--space-sm); padding: var(--space-xl);">
+                    <span class="t-mono" style="color: var(--color-signal); font-weight: 600;">[01]</span>
+                    <h3 class="t-headline-sm" style="font-size: 20px; font-weight: 600; margin: 0;">Intelligent Farm Loop</h3>
+                    <p class="t-body-sm" style="margin: 0; color: var(--color-graphite);">
+                        Automatically runs <code>owo h</code> and <code>owo b</code> commands. Smartly equips hunting gems from your inventory to maximize yields and automate setup.
+                    </p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="card card--paper" style="gap: var(--space-sm); padding: var(--space-xl);">
+                    <span class="t-mono" style="color: var(--color-signal); font-weight: 600;">[02]</span>
+                    <h3 class="t-headline-sm" style="font-size: 20px; font-weight: 600; margin: 0;">Real-time Websocket Logs</h3>
+                    <p class="t-body-sm" style="margin: 0; color: var(--color-graphite);">
+                        Streams bot events and Discord channel logs directly to your dashboard in real-time, featuring smooth, jump-free auto-scrolling.
+                    </p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="card card--paper" style="gap: var(--space-sm); padding: var(--space-xl);">
+                    <span class="t-mono" style="color: var(--color-signal); font-weight: 600;">[03]</span>
+                    <h3 class="t-headline-sm" style="font-size: 20px; font-weight: 600; margin: 0;">Integrated Gambling</h3>
+                    <p class="t-body-sm" style="margin: 0; color: var(--color-graphite);">
+                        Play coinflip (<code>cf</code>) and slots (<code>s</code>) automatically with custom base amounts integrated alongside your primary farm cycles.
+                    </p>
+                </div>
+                <!-- Feature 4 -->
+                <div class="card card--paper" style="gap: var(--space-sm); padding: var(--space-xl);">
+                    <span class="t-mono" style="color: var(--color-signal); font-weight: 600;">[04]</span>
+                    <h3 class="t-headline-sm" style="font-size: 20px; font-weight: 600; margin: 0;">Pray or Curse</h3>
+                    <p class="t-body-sm" style="margin: 0; color: var(--color-graphite);">
+                        Run pray or curse commands targeting yourself or others to maintain active multipliers, with customizable repetition limits.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to Use Section -->
+        <section class="section" style="border-top: var(--rule-hairline); border-bottom: var(--rule-hairline); padding: var(--space-2xl) 0;">
+            <div class="section__head">
+                <span class="eyebrow">HOW TO USE</span>
+                <span class="t-mono">GETTING STARTED GUIDE</span>
+            </div>
+            <div class="l-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--gutter); display: grid; width: 100%;">
+                <!-- Step 1 -->
+                <div class="l-stack" style="gap: var(--space-xs);">
+                    <div class="t-mono" style="color: var(--color-stone); font-size: 10px;">STEP 01</div>
+                    <h4 class="t-headline-sm" style="font-weight: 600; margin: 0;">Extract Discord Token</h4>
+                    <p class="t-body-sm" style="color: var(--color-graphite); margin: 0;">
+                        Log in to Discord via your browser, open DevTools (F12), inspect any network request, and copy the <code>Authorization</code> header token value.
+                    </p>
+                </div>
+                <!-- Step 2 -->
+                <div class="l-stack" style="gap: var(--space-xs);">
+                    <div class="t-mono" style="color: var(--color-stone); font-size: 10px;">STEP 02</div>
+                    <h4 class="t-headline-sm" style="font-weight: 600; margin: 0;">Verify Account Connection</h4>
+                    <p class="t-body-sm" style="color: var(--color-graphite); margin: 0;">
+                        Click "Start Farming" to open the dashboard, paste your token, and verify the connection. This unlocks all farming settings and fetches your profile.
+                    </p>
+                </div>
+                <!-- Step 3 -->
+                <div class="l-stack" style="gap: var(--space-xs);">
+                    <div class="t-mono" style="color: var(--color-stone); font-size: 10px;">STEP 03</div>
+                    <h4 class="t-headline-sm" style="font-weight: 600; margin: 0;">Configure Settings</h4>
+                    <p class="t-body-sm" style="color: var(--color-graphite); margin: 0;">
+                        Enable or disable gambling, set bet amounts, choose pray/curse command targets and limits. Configurations are dynamically saved.
+                    </p>
+                </div>
+                <!-- Step 4 -->
+                <div class="l-stack" style="gap: var(--space-xs);">
+                    <div class="t-mono" style="color: var(--color-stone); font-size: 10px;">STEP 04</div>
+                    <h4 class="t-headline-sm" style="font-weight: 600; margin: 0;">Launch Farm Bot</h4>
+                    <p class="t-body-sm" style="color: var(--color-graphite); margin: 0;">
+                        Press "Start Farmbot" and monitor live terminal logs. The console automatically scrolls and prunes entries to prevent memory lag.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section l-stack" style="align-items: center; text-align: center; gap: var(--space-lg); padding: var(--space-3xl) 0;">
+            <h2 class="t-display-lg" style="font-size: 56px; text-transform: uppercase; margin: 0;">Ready to automate your farm?</h2>
+            <p class="t-body" style="max-width: 550px; color: var(--color-stone); margin: 0;">
+                Get started instantly. All your configurations are secured and saved locally on your desktop.
+            </p>
+            <div style="margin-top: var(--space-sm);">
+                <a href="/dashboard" class="btn btn--primary cta-btn" style="font-size: 14px; padding: 16px 28px;">
+                    START FARMING NOW
+                    <svg class="btn__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-left: 6px; width: 16px; height: 16px; stroke-width: 2;">
+                        <path d="M5 12h14" />
+                        <path d="m13 5 7 7-7 7" />
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <div class="foot__legal" style="width: 100%; padding: var(--space-md) 0; border-top: 1px solid var(--color-hairline); margin-top: var(--space-xl);">
+                <span>© OWO Studio MMXXVI</span>
+                <span style="float: right;">Edition 04 — Linen System v1.0</span>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Scripts -->
+</body>
+</html>
+
