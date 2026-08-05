@@ -16,6 +16,31 @@ A highly optimized, elegant desktop automation console for OwO on Discord.
 
 ---
 
+## How It Works
+
+### The Automation Cycle
+OwO Auto Bot relies on a highly sophisticated, jitter-based asynchronous event loop:
+1. **Humanized Delays:** The bot never operates on a perfectly rigid timer. If the base delay is set to 15 seconds, it applies a randomized Gaussian offset to every cycle, ensuring actions happen unpredictably (e.g., 14.8s, 16.2s, 15.4s) to mimic real human interaction and evade bot detection.
+2. **Command Dispatch:** During a single farm loop, the bot processes the primary `owo h` (hunt) and `owo b` (battle) commands. It automatically checks your active inventory to equip the highest-tier hunting gems available before dispatching the hunt command.
+3. **Sub-Routines:** In parallel to the main farm loop, asynchronous sub-routines evaluate if gambling (`cf`/`s`) or status (`pray`/`curse`) commands are eligible to run based on your custom configuration limits.
+
+### How Messages Are Sent
+The bot does **not** rely on injecting scripts into your browser or simulating physical keyboard presses (like a macro). Instead, it communicates entirely via **Discord's API endpoints and WebSockets**:
+- When a command is triggered, the bot simulates a "typing" state indicator in the target Discord channel.
+- It calculates a dynamic delay based on the character length of the command, mimicking human typing speed.
+- It then dispatches the raw JSON payload securely to the Discord API, executing the command instantaneously in the background.
+
+---
+
+## Libraries & Technology Stack
+This executable was built using several powerful open-source libraries:
+- **`discord.py-self`**: The core engine. It manages the Discord API websocket connections, allows the application to log in using a User Token, reads incoming OwO bot messages, and dispatches your commands.
+- **`pywebview`**: The GUI framework. It renders the beautiful, modern HTML/CSS interface directly into a native Windows desktop window without requiring a traditional browser.
+- **`aiohttp`**: The local web server. It bridges the gap between the frontend UI and the backend Python engine, allowing your toggle switches and inputs to instantly communicate with the bot in real-time.
+- **`colorama`**: The console styling engine. It formats and color-codes the internal terminal logs, making it easy to track loot drops, errors, and cycle delays at a glance.
+
+---
+
 ## Step-by-Step Installation & Usage Guide
 
 ### 1. Download the App
