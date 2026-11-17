@@ -1,81 +1,157 @@
-# OwO Auto Bot (Desktop)
-
-![Python](https://img.shields.io/badge/python-3.11-blue.svg)
-![Security](https://img.shields.io/badge/Security-100%25%20Offline%20Air--Gapped-brightgreen.svg)
-![UI](https://img.shields.io/badge/UI-Windows%2011%20Fluent%20Dark-blue.svg)
-![License](https://img.shields.io/badge/License-MIT-yellow.svg)
-
-A highly optimized, elegant desktop automation console for OwO on Discord.
-
-## Features
-- **Intelligent Farm Loop & Auto Gems:** Automatically runs `owo h` and `owo b` commands. Smartly equips the highest-tier hunting gems from your inventory to maximize yields and automate setup.
-- **Auto Captcha Detection & Stopping:** Actively monitors direct messages and channel responses for OwO captchas. Instantly halts all automation immediately to protect your account.
-- **Real-time Websocket Logs:** Streams bot events and Discord channel logs directly to your dashboard in real-time, featuring smooth, jump-free auto-scrolling.
-- **Integrated Gambling:** Play coinflip (`cf`) and slots (`s`) automatically with custom base amounts integrated alongside your primary farm cycles.
-- **Pray or Curse:** Run pray or curse commands targeting yourself or others to maintain active multipliers, with customizable repetition limits.
-
----
-
-## Step-by-Step Installation & Usage Guide
-
-### 1. Download the App
-Go to the [Releases](../../releases) tab on the right side of this repository and download the latest version of `OwO Auto Bot.exe`. No installation is required—just save it to a folder and double-click to run!
-
-### 2. Extract your Discord Token
-To allow the bot to automate tasks on your behalf, you need to provide it with your personal Discord authorization token. 
-
-1. Open Discord in your web browser (Chrome, Edge, or Firefox).
-2. Press `F12` on your keyboard to open the **Developer Tools**.
-3. Go to the **Network** tab at the top of the tools window.
-4. Send a message in any Discord channel (like "hi").
-5. In the Network tab, look for a request named `messages`. Click on it.
-6. Scroll down to the **Request Headers** section and look for the word `Authorization`.
-7. Copy the long random text next to it. That is your token!
-
-*(If this feels too technical or confusing, simply head over to YouTube and search for **"How to find Discord User Token"** for an easy video tutorial!)*
-
-### 3. Configure and Farm
-1. Open `OwO Auto Bot.exe`.
-2. Paste your copied token into the main input box.
-3. Once verified, configure your custom gambling and limit settings.
-4. Click **START FARMBOT** and watch the magic happen in the live console!
-
----
-
-## How It Works
-
-### The Automation Cycle
-OwO Auto Bot relies on a highly sophisticated, jitter-based asynchronous event loop:
-1. **Humanized Delays:** The bot never operates on a perfectly rigid timer. If the base delay is set to 15 seconds, it applies a randomized Gaussian offset to every cycle, ensuring actions happen unpredictably (e.g., 14.8s, 16.2s, 15.4s) to mimic real human interaction and evade bot detection.
-2. **Command Dispatch:** During a single farm loop, the bot processes the primary `owo h` (hunt) and `owo b` (battle) commands. It automatically checks your active inventory to equip the highest-tier hunting gems available before dispatching the hunt command.
-3. **Sub-Routines:** In parallel to the main farm loop, asynchronous sub-routines evaluate if gambling (`cf`/`s`) or status (`pray`/`curse`) commands are eligible to run based on your custom configuration limits.
-
-### How Messages Are Sent
-The bot does **not** rely on injecting scripts into your browser or simulating physical keyboard presses (like a macro). Instead, it communicates entirely via **Discord's API endpoints and WebSockets**:
-- When a command is triggered, the bot simulates a "typing" state indicator in the target Discord channel.
-- It calculates a dynamic delay based on the character length of the command, mimicking human typing speed.
-- It then dispatches the raw JSON payload securely to the Discord API, executing the command instantaneously in the background.
-
----
-
-## Libraries & Technology Stack
-This executable was built using several powerful open-source libraries:
-- **`discord.py-self`**: The core engine. It manages the Discord API websocket connections, allows the application to log in using a User Token, reads incoming OwO bot messages, and dispatches your commands.
-- **`pywebview`**: The GUI framework. It renders the beautiful, modern HTML/CSS interface directly into a native Windows desktop window without requiring a traditional browser.
-- **`aiohttp`**: The local web server. It bridges the gap between the frontend UI and the backend Python engine, allowing your toggle switches and inputs to instantly communicate with the bot in real-time.
-- **`colorama`**: The console styling engine. It formats and color-codes the internal terminal logs, making it easy to track loot drops, errors, and cycle delays at a glance.
-
----
-
-## Disclaimer
-> **Warning:** Self-botting is strictly against Discord's Terms of Service. Use this application at your own risk. The developers are not responsible for any account bans or data loss.
-
----
 <div align="center">
-  <a href="https://buymeacoffee.com/amshivang">
-    <img src="https://raw.githubusercontent.com/amshivang/amshivang/main/qr-code.png" alt="Buy Me A Coffee" width="200">
-  </a>
-  <br>
-  <strong><a href="https://buymeacoffee.com/amshivang">Support my work on Buy Me A Coffee! ☕</a></strong>
+
+  <p>
+    <a href="https://github.com/amshivang"><strong>Shivang Shukla (@amshivang)</strong></a> • 
+    <a href="https://github.com/amshivang?tab=repositories">Portfolio Repositories</a> • 
+    <a href="mailto:linkwithshivang@gmail.com">Contact</a>
+  </p>
+
+  # 🤖 OwO Auto Bot (Desktop)
+  ### High-Performance Desktop Automation Console for Discord OwO
+
+  <p>
+    <em>A desktop automation dashboard for Discord OwO bot interactions, featuring humanized Gaussian jitter timing, real-time WebSocket event streaming, and automated captcha emergency halting.</em>
+  </p>
+
+  <p>
+    <a href="https://python.org"><img src="https://img.shields.io/badge/Python-3.11-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python 3.11"/></a>
+    <a href="https://github.com/dolfies/discord.py-self"><img src="https://img.shields.io/badge/Engine-discord.py--self-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord Engine"/></a>
+    <a href="#"><img src="https://img.shields.io/badge/GUI-pywebview%20%2B%20Fluent-0284C7?style=for-the-badge&logo=windows11&logoColor=white" alt="Fluent GUI"/></a>
+    <a href="https://github.com/amshivang/owofarmbot/releases"><img src="https://img.shields.io/badge/Distribution-Standalone%20EXE-059669?style=for-the-badge" alt="Distribution"/></a>
+    <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-EAB308?style=for-the-badge" alt="License: MIT"/></a>
+  </p>
+
+  <p>
+    <a href="#-overview">Overview</a> •
+    <a href="#-key-features">Key Features</a> •
+    <a href="#-how-it-works">How It Works</a> •
+    <a href="#-architecture--tech-stack">Tech Stack</a> •
+    <a href="#-installation--setup">Setup Guide</a> •
+    <a href="#-safety--disclaimer">Disclaimer</a> •
+    <a href="#-author--connect">Author</a>
+  </p>
+
 </div>
 
+---
+
+## 📌 Overview
+
+**OwO Auto Bot** is a high-performance, standalone Windows desktop application engineered to streamline and automate repetitive interactions with the popular Discord OwO economy bot.
+
+Rather than relying on clunky keyboard macros or fragile browser screen-scraping extensions, OwO Auto Bot operates at the protocol level. It establishes asynchronous WebSocket connections using `discord.py-self`, analyzes Discord Gateway events in real-time, injects dynamic typing simulations with humanized Gaussian delay curves, and displays a live, responsive dashboard inside a native Fluent Dark GUI.
+
+---
+
+## ✨ Key Features
+
+- **⚡ Intelligent Farm & Hunt Loop**: Dispatches automated `owo h` (hunt) and `owo b` (battle) routines with smart gem auto-equipping to maximize loot yield.
+- **🚨 Automated Captcha Detection & Emergency Stop**: Actively intercepts incoming Direct Messages and server channel mentions from the OwO bot. The moment a captcha challenge is detected, all automation halts instantly with sound alerts to protect the account from bans.
+- **📊 Real-Time WebSocket Event Console**: Streams Discord channel responses, loot drops, currency gains, and balance updates live into the desktop dashboard with smooth, jump-free autoscrolling.
+- **🎲 Integrated Gambling & Multiplier Subroutines**: Automated coinflip (`cf`) and slots (`s`) routines with strict stop-loss limits and customizable cycle intervals.
+- **🙏 Automated Multiplier Maintenance**: Automates `owo pray` / `owo curse` targeting self or designated user IDs with configurable repetition counters.
+- **🪟 Standalone Executable Distribution**: Distributed as a single, portable Windows binary (`OwO Auto Bot.exe`) requiring zero Python installation.
+
+---
+
+## ⚡ How It Works
+
+```
+  ┌─────────────────────────────────┐
+  │   OwO Auto Bot Desktop GUI      │
+  │   (pywebview + aiohttp backend) │
+  └────────────────┬────────────────┘
+                   │ User Config & Live Logs
+                   ▼
+  ┌─────────────────────────────────┐
+  │   Asynchronous Dispatch Loop    │
+  │   - Gaussian Jitter Timing      │
+  │   - Humanized Typing Latency    │
+  └────────────────┬────────────────┘
+                   │
+                   ▼
+  ┌─────────────────────────────────┐
+  │   Discord Gateway (WebSocket)   │
+  │   via discord.py-self           │
+  └────────────────┬────────────────┘
+                   │
+       ┌───────────┴───────────┐
+       ▼                       ▼
+  [ Send Commands ]     [ Intercept Gateway Events ]
+  - owo hunt                   │
+  - owo battle                 ▼
+  - owo pray           [ Captcha Check ]
+                         │
+                         ├──► Captcha Detected? ──► [ EMERGENCY HALT & ALARM ]
+                         └──► Normal Loot/Drops ──► [ Stream to Dashboard ]
+```
+
+1. **Gaussian Delay Distribution**: Commands never fire on rigid mathematical intervals. A dynamic Gaussian offset is applied to every cycle (e.g. 15.0s target $\pm$ 1.8s variance) to emulate human irregularity.
+2. **Dynamic Typing Emulation**: Before payload transmission, the bot signals Discord's typing API endpoint with duration proportional to command string length.
+3. **Gateway Event Filtering**: Incoming messages are parsed concurrently. If the OwO bot mentions the user with verification prompts, the state machine switches immediately to `EMERGENCY_STOP`.
+
+---
+
+## 🛠️ Architecture & Tech Stack
+
+| Component / Layer | Technology | Architectural Role & Rationale |
+| :--- | :--- | :--- |
+| **Core Protocol Engine** | `discord.py-self` | Manages Discord Gateway WebSockets, user token authentication & event listeners |
+| **GUI Framework** | `pywebview` | Embeds modern HTML/CSS interface directly into a native Windows desktop frame |
+| **Local Inter-Process Bridge**| `aiohttp` | Lightweight asynchronous local webserver bridging Python core with frontend UI |
+| **Terminal Formatting** | `colorama` | Formats and color-codes internal log levels, alerts, and debug information |
+| **Binary Packaging** | PyInstaller | Compiles entire runtime, dependencies, and web assets into a single `.exe` |
+
+---
+
+## 🚀 Installation & Setup
+
+### 1. Download Standalone Executable
+Download the latest pre-compiled build (`OwO Auto Bot.exe`) from the [Releases](https://github.com/amshivang/owofarmbot/releases) section. No Python installation is needed.
+
+### 2. Extract Discord User Authorization Token
+1. Open Discord in your desktop browser (Chrome, Edge, or Brave).
+2. Press <kbd>F12</kbd> (or <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>I</kbd>) to open Developer Tools.
+3. Select the **Network** tab.
+4. Send any test message in a channel (e.g. "test").
+5. Click on the `messages` network entry, navigate to **Request Headers**, and locate the `Authorization` header.
+6. Copy the alphanumeric token value.
+
+### 3. Launch and Automate
+1. Run `OwO Auto Bot.exe`.
+2. Paste your authorization token into the secure credential field.
+3. Configure your desired hunting cycles, gambling limits, and channels.
+4. Click **Start Farmbot** to initiate the live automation console.
+
+---
+
+## ⚠️ Safety & Disclaimer
+
+> **Important Notice:** Self-botting violates Discord's Terms of Service. Automating user account actions carries inherent risks of account suspension or termination by Discord. This project is published strictly for educational research into asynchronous WebSocket protocols and client automation. Use responsibly and at your own risk.
+
+---
+
+## 📜 License
+
+Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for details.
+
+---
+
+## 👤 Author & Connect
+
+<div align="center">
+  <p><strong>Shivang Shukla</strong></p>
+  <p><em>Cybersecurity & Digital Forensics Scholar @ UPSIFS (Uttar Pradesh State Institute of Forensic Sciences)</em></p>
+
+  <p>
+    <a href="https://github.com/amshivang"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a>
+    <a href="https://www.linkedin.com/in/amshivang/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
+    <a href="mailto:linkwithshivang@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/></a>
+  </p>
+
+  <a href="https://buymeacoffee.com/amshivang">
+    <img src="https://raw.githubusercontent.com/amshivang/amshivang/main/qr-code.png" alt="Buy Me A Coffee" width="180">
+  </a>
+  <br>
+  <strong><a href="https://buymeacoffee.com/amshivang">☕ Support my open-source work on Buy Me A Coffee!</a></strong>
+</div>
