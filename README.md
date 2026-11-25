@@ -50,7 +50,7 @@ Rather than relying on clunky keyboard macros or fragile browser screen-scraping
 - **📊 Real-Time WebSocket Event Console**: Streams Discord channel responses, loot drops, currency gains, and balance updates live into the desktop dashboard with smooth, jump-free autoscrolling.
 - **🎲 Integrated Gambling & Multiplier Subroutines**: Automated coinflip (`cf`) and slots (`s`) routines with strict stop-loss limits and customizable cycle intervals.
 - **🙏 Automated Multiplier Maintenance**: Automates `owo pray` / `owo curse` targeting self or designated user IDs with configurable repetition counters.
-- **🪟 Standalone Executable Distribution**: Distributed as a single, portable Windows binary (`OwO Auto Bot.exe`) requiring zero Python installation.
+- **🪟 Standalone Executable Distribution**: Distributed as a single, portable Windows binary (`OwO_Auto_Bot.exe`) requiring zero Python installation.
 
 ---
 
@@ -86,7 +86,7 @@ Rather than relying on clunky keyboard macros or fragile browser screen-scraping
                          └──► Normal Loot/Drops ──► [ Stream to Dashboard ]
 ```
 
-1. **Gaussian Delay Distribution**: Commands never fire on rigid mathematical intervals. A dynamic Gaussian offset is applied to every cycle (e.g. 15.0s target $\pm$ 1.8s variance) to emulate human irregularity.
+1. **Gaussian Delay Distribution**: Commands never fire on rigid mathematical intervals. A dynamic Gaussian offset is applied to every cycle (e.g. 15.0s target ± 1.8s variance) to emulate human irregularity.
 2. **Dynamic Typing Emulation**: Before payload transmission, the bot signals Discord's typing API endpoint with duration proportional to command string length.
 3. **Gateway Event Filtering**: Incoming messages are parsed concurrently. If the OwO bot mentions the user with verification prompts, the state machine switches immediately to `EMERGENCY_STOP`.
 
@@ -107,7 +107,7 @@ Rather than relying on clunky keyboard macros or fragile browser screen-scraping
 ## 🚀 Installation & Setup
 
 ### 1. Download Standalone Executable
-Download the latest pre-compiled build (`OwO Auto Bot.exe`) from the [Releases](https://github.com/amshivang/owofarmbot/releases) section. No Python installation is needed.
+Download the latest pre-compiled build (`OwO_Auto_Bot.exe`) from the [Releases](https://github.com/amshivang/owofarmbot/releases) section. No Python installation is needed.
 
 ### 2. Extract Discord User Authorization Token
 1. Open Discord in your desktop browser (Chrome, Edge, or Brave).
@@ -118,7 +118,7 @@ Download the latest pre-compiled build (`OwO Auto Bot.exe`) from the [Releases](
 6. Copy the alphanumeric token value.
 
 ### 3. Launch and Automate
-1. Run `OwO Auto Bot.exe`.
+1. Run `OwO_Auto_Bot.exe`.
 2. Paste your authorization token into the secure credential field.
 3. Configure your desired hunting cycles, gambling limits, and channels.
 4. Click **Start Farmbot** to initiate the live automation console.
